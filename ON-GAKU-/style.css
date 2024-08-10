@@ -1,0 +1,559 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+
+@font-face {
+    font-family: 'akira';
+    src: url(font/Akira\ Expanded\ Demo.otf);
+}
+
+
+:root{
+    --a:0;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+
+}
+
+
+
+.container {
+    background-image: url(image/squarebg.jpg);
+    position: relative;
+    height: 100vh;
+    overflow: hidden;
+
+}
+
+.foot{
+    overflow: hidden;
+}
+
+.shadow {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.9), transparent 90%, rgba(0, 0, 0, 0.817));
+}
+
+
+.logo img {
+    width: 3vh;
+}
+
+.logotext {
+    font-weight: 1000;
+    font-size: 30px;
+}
+
+.heading img {
+    width: 32px;
+}
+
+.heading {
+    gap: 1.8vw;
+}
+
+.library {
+    min-height: 63vh;
+    position: relative;
+}
+
+
+
+.thanks{
+    position: relative;
+    left: -7vw;
+    bottom: 5vh;
+    scale: 0.8;
+   
+    
+
+}
+
+.lastText {
+    color: rgba(255, 255, 255);
+    font-family: 'akira';
+    font-weight: 1000;
+    position: absolute;
+    left: 9vw;
+    bottom: -4vh;
+    scale: 0.0;
+   
+}
+
+.icons{
+    
+    position: absolute;
+    display: flex;
+    gap: 3vw;
+    left: 14vw;
+    scale: 0.5;
+    top: -2vh;
+    display: none;
+}
+
+
+.footer a {
+    color: grey;
+    text-decoration: none;
+}
+
+.footer a:hover {
+    color: white;
+    filter: drop-shadow(0 0 10px #e1e1e1);
+}
+
+.left {
+    width: 25vw;
+    padding: 10px;
+    font-family: akira;
+    font-size: 15px;
+    z-index: 100;
+}
+
+.home ul li {
+    list-style: none;
+    width: 2vw;
+    display: flex;
+    gap: 2vw;
+    padding-top: 16px;
+
+}
+
+.right {
+    width: 82vw;
+
+    /* background-image: url(image/ongaku\ bg.jpg);
+    background-repeat: no-repeat;
+    background-size: cover; */
+    margin: 20px 0;
+    margin-right: 1vw;
+    z-index: 100;
+    position: relative;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+
+}
+
+.btn {
+    scale: 0.8;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background-color: rgb(255, 255, 255);
+    color: black;
+    width: 15vh;
+    padding: 5px;
+    border-radius: 30px;
+    font-family: inter;
+    font-weight: 600;
+}
+
+
+
+.header>* {
+    padding: 3.5vh;
+}
+
+.playlist .txt {
+    font-family: 'akira';
+    font-size: larger;
+    padding: 25px 36px;
+    position: relative;
+    left: 2vw;
+
+
+}
+
+.cardContainer {
+    display: flex;
+    gap: 2vw;
+    flex-wrap: wrap;
+    overflow-y: auto;
+    max-height: 70vh;
+}
+
+.card img {
+
+    width: 100%;
+    object-fit: contain;
+}
+
+.card>* {
+    padding-top: 10px;
+}
+
+.card {
+    position: relative;
+    left: 4vw;
+    width: 12vw;
+    padding: 20px;
+    border-radius: 10px;
+    background-color: rgb(82 82 82 / 33%);
+    backdrop-filter: blur(10px);
+}
+
+.card h2 {
+    font-family: 'akira';
+    font-size: 18px;
+}
+
+.card p {
+    font-family: inter;
+    font-size: 14px;
+    color: #c7c7c7;
+}
+
+.play {
+    width: 28px;
+    height: 28px;
+    background-color: #04f675;
+    border-radius: 50%;
+    padding: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    bottom: 135px;
+    right: 30px;
+    opacity: var(--a);
+    transition: all 0.4s ease-out;
+}
+
+.card:hover{
+    cursor: pointer;
+    --a:1;
+    transition: all 0.2s;
+}
+
+
+.playbar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    left: 29vw;
+    bottom: 30px;
+    background-color: rgb(219 217 217 / 16%);
+    backdrop-filter: blur(5px);
+
+    border-radius: 15px;
+    width: 80%;
+    padding: 12px;
+    height: 5vh;
+    width: 68vw;
+    min-height: 40px;
+}
+
+.seekbar {
+    height: 5px;
+    width: 89%;
+    position: absolute;
+    bottom: 12px;
+    /* border: 2px solid white; */
+    background: white;
+    border-radius: 15px;
+    margin: 4px;
+    cursor: pointer;
+}
+
+
+.circle {
+    width: 12px;
+    height: 12px;
+    border-radius: 20px;
+    background-color: rgb(238, 0, 255);
+    position: relative;
+    bottom: 5px;
+    left: 0%;
+
+    transition: left 0.5s;
+}
+
+
+
+
+
+.songbutton {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    position: relative;
+    bottom: 7px;
+}
+
+
+.songlist {
+    height: 55vh;
+    overflow: auto;
+}
+
+
+.songlist ul {
+    padding: 5vh 0vh;
+
+}
+
+.songlist ul li {
+    list-style: none;
+    display: flex;
+    gap: 1vw;
+    cursor: pointer;
+    padding: 15px 0;
+    margin: 5px;
+    padding: 12px;
+    justify-content: space-between;
+    align-items: center;
+
+}
+
+.songlist ul li:hover {
+    background-color: rgb(219 217 217 / 16%);
+    backdrop-filter: blur(5px);
+    border-radius: 10px;
+}
+
+.ham {
+    display: none;
+    cursor: pointer;
+    width: 40px;
+}
+
+.cross{
+    display: none;
+    position: absolute;
+    right: 36px;
+    top: 44px;
+}
+
+
+.ongakuText{
+    position: relative;
+    left: 75vw;
+    scale: 15;
+    height: 4vh;
+    bottom: -26vh;
+
+    
+}
+
+
+.info {
+    flex: 1;
+    /* Take up remaining space */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.songlist img {
+
+    height: 36px;
+    width: 36px;
+    border-radius: 10px;
+}
+
+.playnow {
+    position: relative;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.songbutton img {
+
+    cursor: pointer;
+}
+
+
+
+.infoTime {
+    display: flex;
+    justify-content: space-between;
+    gap: 20vw;
+    position: relative;
+    bottom: 5px;
+
+}
+
+.songInfo {
+    font-family: inter;
+    font-weight: 500;
+    position: relative;
+    left: 16px;
+}
+
+
+/* 
+.foot{
+    display: none;
+    
+}
+
+
+.thanks{
+    background-color: rgba(0, 0, 0);
+    height: 12vh;
+    
+}
+
+.lastText {
+    color: rgba(255, 255, 255);
+    font-family: 'akira';
+    font-weight: 1000;
+    position: relative;
+    left: 5vw;
+    scale: 0.9;
+    bottom: -6vh;
+}
+
+.icons{
+    
+    position: relative;
+    top: 2vh;
+    display: flex;
+    gap: 2vw;
+    left: 43vw;
+    scale: 0.5;
+} */
+
+
+@media (max-width: 1330px) {
+
+    .left {
+        /* background-color: rebeccapurple; */
+        position: absolute;
+        width: 92vw;
+        left: -100%;
+        transition: all 0.3s;
+        z-index: 1000;
+     
+    }
+
+    .ongakuText{
+        position: relative;
+        left: 101vw;
+    }
+
+    .playbar {
+        width: 75vw;
+        position: absolute;
+        left: 3vw;
+        z-index: 10;
+        background-color: rgb(219 217 217 / 16%);
+        backdrop-filter: blur(20px);
+        font-size: 12px;
+    }
+
+
+    .card {
+        width: 55vw;
+        background-color: rgb(219 217 217 / 16%);
+        backdrop-filter: blur(15px);
+    }
+
+    .cardContainer {
+        margin: 0;
+        position: relative;
+        left: 7vw;
+        max-height: 80vh;
+    }
+
+
+  
+    .songTime{
+    
+        width: 66px;
+    
+    }
+
+    .songlist{
+        height: 57vh;
+    }
+
+    
+    .seekbar{
+        width: 85%;
+    }
+
+    .infoTime{
+        position: relative;
+        right: 10px;
+        scale: 0.6;
+        bottom: 7px;
+    }
+    
+   
+    .txt {
+        position: relative;
+        left: 2vw;
+    }
+
+    .right {
+        width: 100vw;
+    }
+
+    .ham {
+        display: block;
+        position: relative;
+        left: 4vw;
+    } 
+
+    .cross{
+        display: block;
+        position: absolute;
+        right: 36px;
+        top: 44px;
+    }
+
+
+
+
+    
+
+
+    .foot{
+        display: block;
+    }
+
+    .thanks{
+        background-color: rgba(0, 0, 0,);
+        height: 7vh;
+       
+    }
+    
+    .lastText {
+        color: rgba(255, 255, 255);
+        font-family: 'akira';
+        font-weight: 1000;
+        position: absolute;
+        left: 6vw;
+        bottom: -5vh;
+        scale: 1;
+    }
+    
+    .icons{
+        
+        position: absolute;
+        top: 2vh;
+        display: flex;
+        gap: 9vw;
+        left: -8vw;
+        scale: 0.5;
+    }
+
+    
+
+
+
+}
