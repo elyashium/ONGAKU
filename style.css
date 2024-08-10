@@ -453,6 +453,7 @@
         background-color: rgb(219 217 217 / 16%);
         backdrop-filter: blur(20px);
         font-size: 12px;
+        bottom: 7vh;
     }
 
 
