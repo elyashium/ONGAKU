@@ -458,7 +458,7 @@
 
 
     .card {
-        width: 70vw;
+        width: 69vw;
         background-color: rgb(219 217 217 / 16%);
         backdrop-filter: blur(15px);
     }
@@ -476,6 +476,11 @@
     
         width: 66px;
     
+    }
+
+     .songbutton{
+        
+        left: 10vw;
     }
 
     .songlist{
