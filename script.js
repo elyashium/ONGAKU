@@ -23,96 +23,45 @@ function secondsToMinutesSeconds(seconds) {
 
 
 async function getSongs(folder) {
-
-
     currFolder = folder;
 
-    // this is not the ideal way to get the songs but we are not using any backend so 
+    // Fetch the JSON file
+    let response = await fetch(`https://elyashium.github.io/ONGAKU/${folder}/songs.json`);
+    let data = await response.json();
 
-    let a = await fetch(`http://127.0.0.1:3000/on-gaku/${folder}/`);
-    let response = await a.text();
-    console.log(response);
-
-    let div = document.createElement("div");
-    div.innerHTML = response;
-
-    let as = div.getElementsByTagName("a");
-    songs = [];
-    songImages = [];
-
-
-
-    for (let index = 0; index < as.length; index++) {
-        const element = as[index];
-
-        if (element.href.endsWith(".mp3")) {
-            // songs.push(element.href.split(`${folder}`)[1]);
-            let filename = element.href.split("/").slice(-1)[0]; // Get just the filename
-            songs.push(filename);
-
-
-
-        }
-
-        else if (element.href.endsWith(".jpg") || element.href.endsWith(".jpeg")) {
-
-            let parts = element.href.split("/");
-            songImages.push(parts[parts.length - 1]);
-            
-        }
-
-    }
-
-
-
-
+    songs = data.songs;
+    songImages = data.images;
 
     console.log(songs);
     console.log(songImages);
 
-    // Select the unordered list element where the songs will be listed 
+    // Populate the UI with songs and images as before
     let songUL = document.querySelector(".songlist ul");
     songUL.innerHTML = "";
 
-    // Loop through each song and corresponding image to create the list items
-
     for (let i = 0; i < songs.length; i++) {
         let song = songs[i];
-        let imgSrc = songImages[i % songImages.length]; // Handle case where songImages might be fewer than songs
+        let imgSrc = songImages[i % songImages.length];
 
-        // Append the list item to the songUL
         songUL.innerHTML += `<li> 
             <img src="${currFolder}/${imgSrc}" alt="">
             <div class="info">
                 <div> ${song.replaceAll("%20", " ")} </div>
-                
             </div>
             <div class="playnow invert">
                 <img src="image/play.svg" alt="">
             </div> </li>`;
     }
 
-
-
-    // attach an evnet listner to each song.
-
     Array.from(document.querySelector(".songlist").getElementsByTagName("li")).forEach(e => {
-
         e.addEventListener("click", element => {
-
-            console.log(e.querySelector(".info").firstElementChild.innerHTML);
             playMusic(e.querySelector(".info").firstElementChild.innerHTML.trim());
-
         });
-
     });
 
-
     return { songs, songImages };
-
-
-
 }
+
 
 
 

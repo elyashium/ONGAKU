@@ -453,11 +453,12 @@
         background-color: rgb(219 217 217 / 16%);
         backdrop-filter: blur(20px);
         font-size: 12px;
+        bottom: 7vh;
     }
 
 
     .card {
-        width: 55vw;
+        width: 69vw;
         background-color: rgb(219 217 217 / 16%);
         backdrop-filter: blur(15px);
     }
@@ -465,8 +466,8 @@
     .cardContainer {
         margin: 0;
         position: relative;
-        left: 7vw;
-        max-height: 80vh;
+        left: 1vw;
+        max-height: 87vh;
     }
 
 
@@ -475,6 +476,11 @@
     
         width: 66px;
     
+    }
+
+     .songbutton{
+        
+        left: 10vw;
     }
 
     .songlist{
