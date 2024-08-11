@@ -29,7 +29,7 @@ async function getSongs(folder) {
 
     // this is not the ideal way to get the songs but we are not using any backend so 
 
-    let a = await fetch(`/on-gaku/${folder}/`);
+    let a = await fetch(`/ONGAKU/tree/main/${folder}/`);
     let response = await a.text();
     console.log(response);
 
