@@ -29,7 +29,9 @@ async function getSongs(folder) {
 
     // this is not the ideal way to get the songs but we are not using any backend so 
 
-    let a = await fetch(`/ONGAKU/${folder}/`);
+    // let a = await fetch(`/ONGAKU/${folder}/`);
+    let a = await fetch(`https://elyashium.github.io/ONGAKU/${folder}/`);
+
     let response = await a.text();
     console.log(response);
 
