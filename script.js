@@ -80,11 +80,21 @@ const playMusic = (track) => {
     document.querySelector(".songInfo").innerHTML = track;
     document.querySelector(".songTime").innerHTML = "0:00 0:00"
 
+    currentSong.onEnded = () => {
+        let currentFilename = currentSong.src.split("/").slice(-1)[0];
+        let index = songs.indexOf(currentFilename);
 
-
-
-
+        if (index + 1 < songs.length) {
+            playMusic(songs[index + 1]);
+        } else {
+            // Optionally, reset to the first song or stop playing
+            playMusic(songs[0]); // Restart the playlist
+            
+        }
+    };
 }
+
+
 
 async function main() {
 
